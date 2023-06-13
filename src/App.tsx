@@ -1,11 +1,14 @@
 import './App.css'
+import DenseAppBar from './components/AppBar'
+import HomeTabs from './components/Tabs'
 
-function App() {
+function App () {
 
 
   return (
     <>
-     <h1>hello</h1>
+      <DenseAppBar></DenseAppBar>
+      <HomeTabs></HomeTabs>
     </>
   )
 }
