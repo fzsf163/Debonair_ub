@@ -8,7 +8,7 @@ import GroupIcon from '@mui/icons-material/Group';
 
 export default function HomeTabs () {
 
-    const [ value, setValue ] = useState( 1 );
+    const [ value, setValue ] = useState<number>( 1 );
 
     const handleChange = ( _event: React.SyntheticEvent, newValue: number ) => {
         setValue( newValue );
@@ -47,7 +47,7 @@ export default function HomeTabs () {
                 onChange={ handleChange }
                 aria-label="secondary tabs example"
                 centered
-                centerRipple
+                // centerRipple={ true }
                 selectionFollowsFocus={ true }
                 TabIndicatorProps={
                     {
