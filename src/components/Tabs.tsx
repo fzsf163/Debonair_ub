@@ -4,6 +4,9 @@ import Box from '@mui/material/Box';
 
 import { useState } from 'react';
 import { Typography } from '@mui/material';
+import AdminUsers from './AdminUsers';
+import EmployeeUsers from './EmployeeUsers';
+
 
 export default function HomeTabs () {
     const [ value, setValue ] = useState( 1 );
@@ -32,7 +35,7 @@ export default function HomeTabs () {
             >
                 { value === index && (
                     <Box sx={ { p: 1 } }>
-                        <Typography>{ children }</Typography>
+                        { children }
                     </Box>
                 ) }
             </div>
@@ -45,7 +48,7 @@ export default function HomeTabs () {
                 onChange={ handleChange }
                 aria-label="secondary tabs example"
                 centered
-                centerRipple
+                // centerRipple
                 textColor='secondary'
                 indicatorColor='secondary'
             >
@@ -64,10 +67,10 @@ export default function HomeTabs () {
             </Tabs>
             <Box>
                 <TabPanel value={ value } index={ 1 }>
-                    <h1>Hello</h1>
+                    <AdminUsers></AdminUsers>
                 </TabPanel>
                 <TabPanel value={ value } index={ 2 }>
-                    <h2>YOOO</h2>
+                    <EmployeeUsers></EmployeeUsers>
                 </TabPanel>
             </Box>
         </Box>
