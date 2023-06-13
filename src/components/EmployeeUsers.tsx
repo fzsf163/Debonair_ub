@@ -1,16 +1,8 @@
-import {
-    useQuery,
-} from '@tanstack/react-query'
-
-
-import { getEmployee } from '../hooks/getEmployee'
+import QueryUsers from '../query/QueryUsers';
 
 export default function EmployeeUsers () {
 
-    const { data} = useQuery( {
-        queryKey: [ "user-all" ],
-        queryFn: getEmployee,
-    } )
+    const { data } = QueryUsers();
 
     // interface userDataProps {
     //     districeID: number,

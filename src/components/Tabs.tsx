@@ -1,9 +1,7 @@
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-
 import { useState } from 'react';
-import { Typography } from '@mui/material';
 import AdminUsers from './AdminUsers';
 import EmployeeUsers from './EmployeeUsers';
 
@@ -48,7 +46,7 @@ export default function HomeTabs () {
                 onChange={ handleChange }
                 aria-label="secondary tabs example"
                 centered
-                // centerRipple
+                centerRipple
                 textColor='secondary'
                 indicatorColor='secondary'
             >
