@@ -9,7 +9,7 @@ export default function DenseAppBar () {
 
     return (
         <Box sx={ { flexGrow: 1 } }>
-            <AppBar position="static">
+            <AppBar position="static" sx={ { backgroundColor: "inherit" } }>
                 <Toolbar variant="dense" sx={ { p: 2 } }>
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={ { mr: 2 } }>
                         <HomeIcon sx={ {

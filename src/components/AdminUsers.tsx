@@ -22,13 +22,13 @@ export default function AdminUsers () {
 
     console.log( data );
 
-    const onlyAdmin = userData.filter( ( user: { employeeType: string; } ) => user.employeeType === "Admin" );
+    const onlyAdmin = userData?.filter( ( user: { employeeType: string; } ) => user.employeeType === "Admin" );
 
     return (
 
         <div>
-            <h1>user length: { userCount } </h1>
-            <h1>admin user : { onlyAdmin.length }</h1>
+            <h1>Users: { userCount } </h1>
+            <h1>admin user : { onlyAdmin?.length }</h1>
         </div>
     )
 }

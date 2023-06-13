@@ -4,9 +4,10 @@ import Box from '@mui/material/Box';
 import { useState } from 'react';
 import AdminUsers from './AdminUsers';
 import EmployeeUsers from './EmployeeUsers';
-
+import GroupIcon from '@mui/icons-material/Group';
 
 export default function HomeTabs () {
+
     const [ value, setValue ] = useState( 1 );
 
     const handleChange = ( _event: React.SyntheticEvent, newValue: number ) => {
@@ -47,30 +48,53 @@ export default function HomeTabs () {
                 aria-label="secondary tabs example"
                 centered
                 centerRipple
-                textColor='secondary'
-                indicatorColor='secondary'
+                selectionFollowsFocus={ true }
+                TabIndicatorProps={
+                    {
+                        sx: {
+                            backgroundColor: "yellow"
+                        }
+                    }
+                }
+                sx={ {
+                    ".Mui-selected": {
+                        color: `orange`,
+                    }
+                } }
+
             >
+                <Tab
+
+                    sx={ {
+                        width: '100%',
+                        color: 'GrayText',
+                        fontWeight: 900
+                    } }
+                    value={ 1 }
+                    label="Admin Users "
+                    icon={ <GroupIcon></GroupIcon> }
+                    iconPosition='end'
+                />
                 <Tab sx={ {
                     width: '100%',
                     color: 'GrayText',
-                    fontWeight: 900
+                    fontWeight: 900,
                 } }
-                    value={ 1 } label="Admin Users" />
-                <Tab sx={ {
-                    width: '100%',
-                    color: 'GrayText',
-                    fontWeight: 900
-                } }
-                    value={ 2 } label="Employee Users" />
+                    value={ 2 }
+                    label="Employee Users"
+                    icon={ <GroupIcon></GroupIcon> }
+                    iconPosition='end'
+
+                />
             </Tabs>
             <Box>
-                <TabPanel value={ value } index={ 1 }>
+                <TabPanel value={ value } index={ 1 } >
                     <AdminUsers></AdminUsers>
                 </TabPanel>
                 <TabPanel value={ value } index={ 2 }>
                     <EmployeeUsers></EmployeeUsers>
                 </TabPanel>
             </Box>
-        </Box>
+        </Box >
     );
 }

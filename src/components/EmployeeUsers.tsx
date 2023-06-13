@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import QueryUsers from '../query/QueryUsers';
 
 export default function EmployeeUsers () {
@@ -21,12 +22,14 @@ export default function EmployeeUsers () {
 
     console.log( data );
 
-    const onlyEmployee = userData.filter( ( user: { employeeType: string; } ) => user.employeeType === "Employee" );
+    const onlyEmployee = userData?.filter( ( user: { employeeType: string; } ) => user.employeeType === "Employee" );
     return (
 
         <div>
-            <h1>user length: { userCount } </h1>
-            <h1>Employee user : { onlyEmployee.length }</h1>
+            <Box flexDirection={'column'}>
+                <h1>Users: { userCount } </h1>
+                <h1>Employee user : { onlyEmployee.length }</h1>
+            </Box>
         </div>
     )
 }

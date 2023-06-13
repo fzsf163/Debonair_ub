@@ -1,4 +1,6 @@
 /* reset margin on body */
 body {
     margin: 0;
+    color: cornsilk;
+    background-color: rgb(2, 19, 51);
 }
