@@ -8,6 +8,7 @@ import {
 import { Formik, Field, Form, ErrorMessage } from "formik";
 // import { YupValidation } from "../Validation/YupValidate";
 import * as yup from "yup";
+import { createUser } from "../hooks/createUser";
 
 const BasicFormValidation = () => {
     type Props = {
@@ -61,10 +62,10 @@ const BasicFormValidation = () => {
 
     } );
 
-    const handleSubmit = ( values: unknown ) => {
-        console.log( values );
-        // console.log( JSON.stringify( values ) );
-        // props.resetForm();
+    const handleSubmit = ( values: Props ) => {
+        console.log( "From : formik", values );
+        createUser( values )
+
     };
 
     return (
@@ -211,6 +212,7 @@ const BasicFormValidation = () => {
                                             variant="outlined"
                                             margin="dense"
                                             required
+
                                             InputLabelProps={ {
                                                 sx: {
                                                     color: "cornsilk",

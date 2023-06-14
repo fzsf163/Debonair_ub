@@ -8,7 +8,6 @@ export default function QueryUsers () {
         queryFn: getEmployee,
         staleTime: 10,
         cacheTime: 15,
-
     } )
 
 }
