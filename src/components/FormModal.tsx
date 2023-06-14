@@ -33,22 +33,34 @@ export default function FormModal () {
                 open={ open }
                 onClose={ handleClose }
                 aria-labelledby="responsive-dialog-title"
+                sx={ {
+                    backgroundColor: "transparent",
+                    ".MuiPaper-root": {
+                        backgroundColor: "rgb(2, 19, 51)",
+                        color: "cornsilk"
+                    },
+                    ".MuiDialogContentText-root": {
+                        color: "cornsilk"
+                    },
+                    ".MuiButton-text": {
+                        color: 'cornsilk'
+                    }
+                } }
             >
                 <DialogTitle id="responsive-dialog-title">
-                    { "Use Google's location service?" }
+                    { "Add a User" }
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Let Google help apps determine location. This means sending anonymous
-                        location data to Google, even when no apps are running.
+                        <input type='text'></input>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button autoFocus onClick={ handleClose }>
-                        Disagree
+                        Cancel
                     </Button>
                     <Button onClick={ handleClose } autoFocus>
-                        Agree
+                        Submit
                     </Button>
                 </DialogActions>
             </Dialog>
