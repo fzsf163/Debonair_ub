@@ -21,7 +21,7 @@ export default function EmployeeUsers () {
                 <h1>Users: { userCount } </h1>
                 {
                     !isLoading ?
-                        <Box sx={ { m: 3, p: 2, border: 1, borderRadius: 3 } }>
+                        <Box sx={ { m: 3, p: 2, border: 1, borderRadius: 2 } }>
                             <EmployeeTable onlyEmployee={ onlyEmployee }></EmployeeTable>
                         </Box>
                         :

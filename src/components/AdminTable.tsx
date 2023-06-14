@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { MaterialReactTable, type MRT_ColumnDef } from 'material-react-table';
-
+import Edit from '@mui/icons-material/ModeEditOutlineOutlined';
+import { Box, IconButton } from '@mui/material';
 type UserDataProps = {
     districeID: number,
     district: string,
@@ -63,6 +64,15 @@ const AdminTable = ( { onlyAdmin }: Props ) => {
                 sx: { minWidth: '300px', backgroundColor: "rgb(2, 19, 51)", borderRadius: 5, "::placeholder": { color: "cornsilk" }, "input": { color: "white" } },
                 variant: 'outlined',
             } }
+
+            enableRowActions
+            renderRowActions={ ( { row } ) => (
+                <Box>
+                    <IconButton onClick={ () => console.info( row.original.empID ) }>
+                        <Edit sx={ { color: "cornsilk" } } />
+                    </IconButton>
+                </Box>
+            ) }
 
             muiTopToolbarProps={ {
                 sx: {

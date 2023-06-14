@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { MaterialReactTable, type MRT_ColumnDef } from 'material-react-table';
-
+import Edit from '@mui/icons-material/ModeEditOutlineOutlined';
+import { Box, IconButton } from '@mui/material';
 type UserDataProps = {
     districeID: number,
     district: string,
@@ -81,6 +82,14 @@ const EmployeeTable = ( { onlyEmployee }: Props ) => {
                 variant: 'outlined',
             } }
 
+            enableRowActions
+            renderRowActions={ ( { row } ) => (
+                <Box>
+                    <IconButton onClick={ () => console.log( row.original.empID ) }>
+                        <Edit sx={ { color: "cornsilk" } } />
+                    </IconButton>
+                </Box>
+            ) }
             muiTopToolbarProps={ {
                 sx: {
                     backgroundColor: "rgb(2, 19, 51)",

@@ -24,7 +24,7 @@ export default function AdminUsers () {
 
             {
                 !isLoading ?
-                    <Box sx={ { m: 3, p: 2, border: 1, borderRadius: 3 } }>
+                    <Box sx={ { m: 3, p: 2, border: 1, borderRadius: 2 } }>
                         <AdminTable onlyAdmin={ onlyAdmin }></AdminTable>
                     </Box>
                     :
