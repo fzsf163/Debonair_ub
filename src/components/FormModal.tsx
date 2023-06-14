@@ -9,6 +9,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import AddPerson from '@mui/icons-material/PersonAddOutlined';
 import { IconButton } from '@mui/material';
+import BasicFormValidation from './FormikForm';
 
 export default function FormModal () {
     const [ open, setOpen ] = React.useState( false );
@@ -52,15 +53,12 @@ export default function FormModal () {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        <input type='text'></input>
+                        <BasicFormValidation></BasicFormValidation>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button autoFocus onClick={ handleClose }>
+                    <Button autoFocus sx={ { border: 1, mr: 3, mb: 2, px: 2 } } onClick={ handleClose }>
                         Cancel
-                    </Button>
-                    <Button onClick={ handleClose } autoFocus>
-                        Submit
                     </Button>
                 </DialogActions>
             </Dialog>
