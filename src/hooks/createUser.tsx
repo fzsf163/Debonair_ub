@@ -13,7 +13,7 @@ export const createUser = async ( user: Props ) => {
     // console.log( "From axios", user );
 
     try {
-        const response = await axios.post( " http://59.152.62.177:8085/api/SaveEmployeeInformation", {
+        const response = await axios.post( " http://59.152.62.177:8085/api/Employee/SaveEmployeeInformation", {
             user
         }
         );

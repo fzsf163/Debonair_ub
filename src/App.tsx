@@ -19,8 +19,11 @@ const routes = createBrowserRouter( [
 
         },
         {
-          path: '/user',
-          element: <UserDetails></UserDetails>
+          path: 'user/:id',
+          element: <UserDetails></UserDetails>,
+          loader: async ( { params } ) => {
+            return fetch( `http://59.152.62.177:8085/api/Employee/IndividualEmployeeData/${ params.id }` )
+          }
         }
       ]
   }

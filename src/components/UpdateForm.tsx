@@ -7,9 +7,11 @@ import {
 } from "@mui/material";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as yup from "yup";
-import { createUser } from "../hooks/createUser";
+import { updateUser } from "../hooks/updateUser";
 
-const BasicFormValidation = () => {
+
+
+const UpdateForm = ( id: any  ) => {
     type Props = {
         district: string,
         division: string,
@@ -62,8 +64,7 @@ const BasicFormValidation = () => {
     } );
 
     const handleSubmit = ( values: Props ) => {
-        console.log( "From : formik", values );
-        createUser( values )
+        updateUser( id , values );
     };
 
     return (
@@ -71,9 +72,7 @@ const BasicFormValidation = () => {
             <Grid item sm={ 3 } xs={ false }></Grid>
             <Grid item sm={ 6 } xs={ 12 }>
                 <Paper>
-                    <Box sx={{
-                        backgroundColor:"inherit"
-                    }}>
+                    <Box>
                         <Formik
                             initialValues={ initialValue }
                             onSubmit={ handleSubmit }
@@ -259,4 +258,4 @@ const BasicFormValidation = () => {
     );
 };
 
-export default BasicFormValidation;
+export default UpdateForm;
