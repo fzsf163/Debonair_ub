@@ -3,7 +3,7 @@
 ### Assesment
 
 used techs:
-
+```
 "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -31,4 +31,6 @@ used techs:
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
   }
+  
+  ```
 
