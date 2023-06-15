@@ -14,12 +14,7 @@ export const createUser = async ( user: Props ) => {
 
     try {
         const response = await axios.post( " http://59.152.62.177:8085/api/SaveEmployeeInformation", {
-            districeID: 3,
-            divisionId: '4',
-            empID: '123',
-            employeeType: 'Admin',
-            firstName: 'Rafi',
-            lastName: 'Sana'
+            user
         }
         );
         console.log( response.data );

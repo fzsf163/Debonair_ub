@@ -65,7 +65,6 @@ const BasicFormValidation = () => {
     const handleSubmit = ( values: Props ) => {
         console.log( "From : formik", values );
         createUser( values )
-
     };
 
     return (
